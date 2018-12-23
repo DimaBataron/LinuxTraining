@@ -1,0 +1,14 @@
+# Создание статической библиотеки
+binary: main.o libworld.a
+	gcc -o binary main.o -L. -lworld #на основе бибилиотеки и объектного 
+#кода создаем  бинарный файл
+# -L параметр указывает линковщику где искать библиотеку (в этом каталоге)
+main.o: main.c
+	gcc -c main.c
+libworld.a: h_world.o g_world.o #компоненты
+	ar cr libworld.a h_world.o g_world.o #из объектных файлов делаем ст.б.
+h_world.o: h_world.c
+	gcc -c h_world.c #создаем объектный файл
+g_world.o: g_world.c
+	gcc -c g_world.c
+clean: rm -f *.o *.a binary
