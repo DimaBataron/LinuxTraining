@@ -17,7 +17,7 @@ void main(int ARGC,char *ARGV[])
     char sear[100];
     int c;
     FILE *fp;
-s    fprintf(stdout,"Search poisk <100 characters :\n ");
+    fprintf(stdout,"Search poisk <100 characters :\n ");
     fgets(sear,100,stdin); //ввод строки для поиска
 
     if(ARGC ==1) // не заданы имена файлов
